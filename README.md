@@ -1,5 +1,10 @@
 # ph-faker
 
+[![npm version](https://img.shields.io/npm/v/@ph-dev-utils/faker?label=npm&color=cb3837&logo=npm)](https://www.npmjs.com/package/@ph-dev-utils/faker)
+[![Packagist version](https://img.shields.io/packagist/v/phdevutils/faker?label=Packagist&color=f28d1a&logo=packagist&logoColor=white)](https://packagist.org/packages/phdevutils/faker)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Made in PH](https://img.shields.io/badge/made%20in-🇵🇭%20Philippines-0038A8)](https://github.com/kon2raya24)
+
 Filipino-localized fake-data generator for JS and PHP. Sibling of [ph-dev-utils](https://github.com/kon2raya24/ph-dev-utils).
 
 Generates fake Filipino names, addresses, phone numbers, government IDs (format-valid only), peso amounts, and business names — all driven by a seeded deterministic PRNG so your test fixtures stay reproducible.

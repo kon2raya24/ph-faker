@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-05-19
+
+### Changed
+
+- README badges (npm version, Packagist version, MIT license, Made in PH) on root and per-package READMEs.
+- No functional changes — pure polish for discoverability on registry pages.
+
 ## [0.1.1] - 2026-05-19
 
 ### Fixed

@@ -1,5 +1,9 @@
 # @ph-dev-utils/faker
 
+[![npm version](https://img.shields.io/npm/v/@ph-dev-utils/faker?label=npm&color=cb3837&logo=npm)](https://www.npmjs.com/package/@ph-dev-utils/faker)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/kon2raya24/ph-faker/blob/main/LICENSE)
+[![Made in PH](https://img.shields.io/badge/made%20in-🇵🇭%20Philippines-0038A8)](https://github.com/kon2raya24)
+
 Filipino-localized fake-data generator for JavaScript and TypeScript. Sibling of [`@ph-dev-utils/core`](https://www.npmjs.com/package/@ph-dev-utils/core).
 
 Generates fake Filipino names, addresses, phone numbers, government IDs (format-valid only), peso amounts, and business names — driven by a seeded deterministic PRNG so your fixtures stay reproducible.
