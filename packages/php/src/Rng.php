@@ -5,50 +5,33 @@ declare(strict_types=1);
 namespace PhDevUtils\Faker;
 
 /**
- * Seeded deterministic PRNG using PHP's Mt19937 engine via the \Random\Randomizer
- * API (PHP 8.2+) with a fallback to mt_srand/mt_rand for PHP 8.1. Same seed →
- * same sequence within a PHP version. Cross-language compat with the JS package
- * is not guaranteed.
+ * Seeded deterministic PRNG. Each Rng owns its own \Random\Engine\Mt19937
+ * engine, so independent Faker instances do not interfere with each other.
+ * Same seed → same sequence within a PHP runtime. Cross-language compat
+ * with the JS package is not guaranteed.
  */
 final class Rng
 {
-    private ?\Random\Randomizer $randomizer = null;
-    private int $seed;
+    private \Random\Randomizer $randomizer;
 
     public function __construct(int $seed)
     {
-        $this->seed = $seed;
-        $this->reset();
+        $this->randomizer = new \Random\Randomizer(new \Random\Engine\Mt19937($seed));
     }
 
     public function setSeed(int $seed): void
     {
-        $this->seed = $seed;
-        $this->reset();
-    }
-
-    private function reset(): void
-    {
-        if (class_exists(\Random\Engine\Mt19937::class)) {
-            $engine = new \Random\Engine\Mt19937($this->seed);
-            $this->randomizer = new \Random\Randomizer($engine);
-        } else {
-            mt_srand($this->seed);
-            $this->randomizer = null;
-        }
+        $this->randomizer = new \Random\Randomizer(new \Random\Engine\Mt19937($seed));
     }
 
     public function nextInt(int $min, int $maxInclusive): int
     {
-        if ($this->randomizer !== null) {
-            return $this->randomizer->getInt($min, $maxInclusive);
-        }
-        return mt_rand($min, $maxInclusive);
+        return $this->randomizer->getInt($min, $maxInclusive);
     }
 
     public function next(): float
     {
-        // [0, 1) — use a 30-bit slice to stay safely inside PHP_INT_MAX on 32-bit too.
+        // [0, 1) — 30-bit slice keeps math identical regardless of int size.
         return $this->nextInt(0, (1 << 30) - 1) / (1 << 30);
     }
 

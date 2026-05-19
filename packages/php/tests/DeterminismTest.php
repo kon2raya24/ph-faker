@@ -38,4 +38,25 @@ final class DeterminismTest extends TestCase
         }
         $this->assertGreaterThan(10, count($set));
     }
+
+    public function testTwoInstancesDoNotShareState(): void
+    {
+        // Sequence from a Faker(7) used alone.
+        $solo = new Faker(7);
+        $soloSeq = [];
+        for ($i = 0; $i < 10; $i++) {
+            $soloSeq[] = $solo->name->full();
+        }
+
+        // Same Faker(7) used while another Faker(99) is also drawing.
+        // If Mt19937 engine state leaked between instances, soloSeq2 would diverge.
+        $a = new Faker(7);
+        $b = new Faker(99);
+        $soloSeq2 = [];
+        for ($i = 0; $i < 10; $i++) {
+            $soloSeq2[] = $a->name->full();
+            $b->name->full(); // discard — must NOT influence $a
+        }
+        $this->assertSame($soloSeq, $soloSeq2);
+    }
 }

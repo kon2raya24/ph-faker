@@ -24,7 +24,7 @@ describe('module surface', () => {
 
   it('address.province has a region pointer', () => {
     const p = f.address.province();
-    expect(p.region).toMatch(/^\d{2}[A-Z]?$/);
+    expect(p.region).toMatch(/^\d{2}$/);
   });
 
   it('money.peso respects min/max', () => {

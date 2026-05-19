@@ -63,7 +63,9 @@ $f->business->name();
 
 ## Determinism
 
-Calling `faker.seed(n)` makes subsequent calls deterministic *within the same language*. Cross-language seed compatibility is **not** guaranteed in v0.1 (JS uses mulberry32, PHP uses mt_srand).
+Calling `faker.seed(n)` makes subsequent calls deterministic *within the same language*. Cross-language seed compatibility is **not** guaranteed in v0.1 (JS uses mulberry32, PHP uses Mt19937 via `\Random\Randomizer`).
+
+Each `Faker` instance owns its own PRNG state, so multiple instances with different seeds run independently — there is no global-state bleed.
 
 ## License
 

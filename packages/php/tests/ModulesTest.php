@@ -37,7 +37,7 @@ final class ModulesTest extends TestCase
     {
         $f = new Faker(7);
         $p = $f->address->province();
-        $this->assertMatchesRegularExpression('/^\d{2}[A-Z]?$/', $p['region']);
+        $this->assertMatchesRegularExpression('/^\d{2}$/', $p['region']);
     }
 
     public function testMoneyPesoRange(): void
