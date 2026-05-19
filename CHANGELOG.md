@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-05-19
+
+### Added
+
+- Full API Reference section in both per-package READMEs (`packages/js/README.md` and `packages/php/README.md`). Every method documented with signature, parameters, return type, and examples. Replaces the previous catch-all "Usage" code block.
+
+### Changed
+
+- No functional changes — documentation only.
+
 ## [0.1.2] - 2026-05-19
 
 ### Changed
