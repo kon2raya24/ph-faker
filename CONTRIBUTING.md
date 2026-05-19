@@ -59,6 +59,32 @@ Same seed → same sequence, *within the same language and runtime version*. Cro
 
 Multiple `Faker` instances must remain independent. PRs that introduce shared global state (e.g. `mt_srand`, `Math.random`-based defaults) will be rejected — see `Rng.php` and `rng.ts` for the per-instance pattern.
 
+## Publishing (PHP package)
+
+Packagist requires `composer.json` at repo root, but this is a monorepo. To publish, we maintain a read-only mirror at https://github.com/kon2raya24/ph-faker-php that contains only the PHP package (with `data/` bundled in).
+
+Update the mirror from a clean monorepo working tree:
+
+```bash
+bash scripts/split-php.sh
+```
+
+The script uses `git subtree split` to extract `packages/php/` history, copies `data/*.json` into the split root, and force-pushes to the mirror's `main` branch. Force-push is expected — `git subtree split` recomputes commit hashes each run.
+
+To cut a release:
+
+1. Bump `version` in `packages/php/composer.json` (when/if added) and `CHANGELOG.md`.
+2. Commit and push the monorepo.
+3. Run `scripts/split-php.sh` to update the mirror.
+4. Tag the mirror: in the mirror repo, `git tag vX.Y.Z && git push origin vX.Y.Z` (or use the GitHub UI on the mirror).
+5. (First time only) submit the mirror URL at https://packagist.org/packages/submit. After that, Packagist auto-syncs.
+
+The JS package publishes directly to npm from the monorepo — no split needed:
+
+```bash
+cd packages/js && npm publish --access public
+```
+
 ## Commit conventions
 
 No strict format, but:
