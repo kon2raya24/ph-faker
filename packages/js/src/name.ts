@@ -1,7 +1,7 @@
 import { Rng } from './rng.js';
-import maleFirstNames from '../../../data/first-names-male.json' with { type: 'json' };
-import femaleFirstNames from '../../../data/first-names-female.json' with { type: 'json' };
-import lastNames from '../../../data/last-names.json' with { type: 'json' };
+import maleFirstNames from '../data/first-names-male.json' with { type: 'json' };
+import femaleFirstNames from '../data/first-names-female.json' with { type: 'json' };
+import lastNames from '../data/last-names.json' with { type: 'json' };
 
 export type Gender = 'male' | 'female';
 

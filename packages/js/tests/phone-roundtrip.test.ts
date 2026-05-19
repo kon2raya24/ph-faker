@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { Faker } from '../src/index.js';
-import prefixes from '../../../data/network-prefixes.json' with { type: 'json' };
+import prefixes from '../data/network-prefixes.json' with { type: 'json' };
 
 // Inline-mirror of ph-dev-utils' parseMobile prefix→network lookup. Keep in sync
 // if data/network-prefixes.json adds/removes a network.

@@ -1,7 +1,7 @@
 import { Rng } from './rng.js';
-import regionsData from '../../../data/regions.json' with { type: 'json' };
-import provincesData from '../../../data/provinces.json' with { type: 'json' };
-import streetWords from '../../../data/street-words.json' with { type: 'json' };
+import regionsData from '../data/regions.json' with { type: 'json' };
+import provincesData from '../data/provinces.json' with { type: 'json' };
+import streetWords from '../data/street-words.json' with { type: 'json' };
 
 export interface Region {
   code: string;

@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-05-19
+
+### Fixed
+
+- **Critical npm install fix.** v0.1.0 published with `dist/*.js` importing `../../../data/*.json` (a monorepo-relative path that doesn't ship in the tarball). Real installs broke at runtime with `ERR_MODULE_NOT_FOUND`. Data files are now bundled under `data/` inside the package, and imports rewired to `../data/`. PHP side was never affected (uses runtime `DataLoader` + split-mirror data bundle).
+
+v0.1.0 deprecated on npm — please upgrade to 0.1.1+.
+
 ## [0.1.0] - 2026-05-19
 
 Initial release. Filipino-localized fake-data generator for JS and PHP, sibling of [ph-dev-utils](https://github.com/kon2raya24/ph-dev-utils).

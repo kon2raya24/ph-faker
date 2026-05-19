@@ -1,8 +1,8 @@
 import { Rng } from './rng.js';
-import businessWords from '../../../data/business-words.json' with { type: 'json' };
-import maleFirstNames from '../../../data/first-names-male.json' with { type: 'json' };
-import femaleFirstNames from '../../../data/first-names-female.json' with { type: 'json' };
-import lastNames from '../../../data/last-names.json' with { type: 'json' };
+import businessWords from '../data/business-words.json' with { type: 'json' };
+import maleFirstNames from '../data/first-names-male.json' with { type: 'json' };
+import femaleFirstNames from '../data/first-names-female.json' with { type: 'json' };
+import lastNames from '../data/last-names.json' with { type: 'json' };
 
 export class BusinessFaker {
   constructor(private rng: Rng) {}
