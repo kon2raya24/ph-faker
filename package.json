@@ -1,0 +1,14 @@
+{
+  "name": "ph-faker",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Filipino-localized fake-data generator for JS and PHP. Sibling of ph-dev-utils.",
+  "workspaces": [
+    "packages/js"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=@ph-dev-utils/faker",
+    "test": "npm run test --workspace=@ph-dev-utils/faker"
+  },
+  "license": "MIT"
+}

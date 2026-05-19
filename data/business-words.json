@@ -1,0 +1,46 @@
+{
+  "honorifics": ["Aling", "Mang", "Lola", "Lolo", "Tatay", "Nanay", "Kuya", "Ate"],
+  "suffixes": [
+    "Sari-Sari Store",
+    "Carinderia",
+    "Eatery",
+    "Lutong Bahay",
+    "Trading",
+    "Enterprises",
+    "Hardware",
+    "Bakery",
+    "Panaderia",
+    "Lugawan",
+    "Tindahan",
+    "Foods",
+    "Cafe",
+    "Pares House",
+    "Lechon House",
+    "Tapsilogan",
+    "Sisig House",
+    "Halo-Halo House",
+    "Laundry Shop",
+    "Tailoring Shop",
+    "Pharmacy",
+    "General Merchandise",
+    "Catering Services",
+    "Repair Shop",
+    "Auto Supply"
+  ],
+  "initials_words": [
+    "RJ", "JM", "JP", "MJ", "AA", "AB", "AC", "AD", "BJ", "CJ", "DJ",
+    "MNL", "QC", "CDO", "CBU", "DVO"
+  ],
+  "place_flavored": [
+    "Doon Sa Kanto",
+    "Sa Tabi",
+    "Bahay Kubo",
+    "Tindahan ni",
+    "Pinoy Express",
+    "Pinoy Tambayan",
+    "Kapitbahay",
+    "Kanto",
+    "Bayan",
+    "Probinsya"
+  ]
+}

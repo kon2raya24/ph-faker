@@ -1,0 +1,38 @@
+{
+  "name": "@ph-dev-utils/faker",
+  "version": "0.1.0",
+  "description": "Filipino-localized fake-data generator (names, addresses, phones, government IDs, peso amounts, businesses).",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "philippines",
+    "filipino",
+    "faker",
+    "fake-data",
+    "test-fixtures",
+    "seed",
+    "mock"
+  ],
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vitest": "^1.5.0"
+  }
+}

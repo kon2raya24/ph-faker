@@ -1,0 +1,20 @@
+{
+  "heroes": [
+    "Rizal", "Bonifacio", "Mabini", "Aguinaldo", "Luna", "Del Pilar",
+    "Jacinto", "Lopez Jaena", "Diego Silang", "Gabriela Silang",
+    "Lapu-Lapu", "Tandang Sora", "Plaridel", "Burgos", "Gomez", "Zamora"
+  ],
+  "flowers": [
+    "Sampaguita", "Ilang-Ilang", "Rosal", "Gumamela", "Santan", "Adelfa",
+    "Camia", "Dama de Noche", "Waling-Waling", "Kalachuchi", "Cattleya",
+    "Orchid", "Jasmin", "Bougainvillea"
+  ],
+  "trees": [
+    "Narra", "Acacia", "Mahogany", "Mango", "Bayabas", "Kamagong",
+    "Yakal", "Molave", "Talisay", "Banaba"
+  ],
+  "types": [
+    "St.", "Street", "Ave.", "Avenue", "Road", "Drive", "Extension",
+    "Boulevard"
+  ]
+}
