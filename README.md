@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Made in PH](https://img.shields.io/badge/made%20in-🇵🇭%20Philippines-0038A8)](https://github.com/kon2raya24)
 
-Filipino-localized fake-data generator for JS and PHP. Sibling of [ph-dev-utils](https://github.com/kon2raya24/ph-dev-utils).
+Filipino-localized fake-data generator for JS and PHP. Sibling of [ph-dev-utils](https://github.com/kon2raya24/ph-dev-utils) and [ph-payroll](https://github.com/kon2raya24/ph-payroll) (try the [live payroll demo](https://ph-payroll-demo.vercel.app)).
 
 Generates fake Filipino names, addresses, phone numbers, government IDs (format-valid only), peso amounts, and business names — all driven by a seeded deterministic PRNG so your test fixtures stay reproducible.
 
