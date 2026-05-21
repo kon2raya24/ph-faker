@@ -1,7 +1,7 @@
 {
   "name": "@ph-dev-utils/faker",
-  "version": "0.1.3",
-  "description": "Filipino-localized fake-data generator (names, addresses, phones, government IDs, peso amounts, businesses).",
+  "version": "0.2.0",
+  "description": "Filipino-localized fake-data generator — names, addresses (regions/provinces/cities), phones, government IDs, peso amounts, businesses, PH holiday/working-day dates, and full payslip fixtures (uses @ph-dev-utils/payroll).",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
@@ -32,6 +32,10 @@
     "seed",
     "mock"
   ],
+  "dependencies": {
+    "@ph-dev-utils/core": "^0.2.0",
+    "@ph-dev-utils/payroll": "^0.3.0"
+  },
   "devDependencies": {
     "typescript": "^5.4.0",
     "vitest": "^1.5.0"

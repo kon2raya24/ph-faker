@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-05-21
+
+### Added
+
+- **`faker.payslip(opts?)`** — generates a complete fake PH payslip with employee identity (name, TIN, SSS, PhilHealth, Pag-IBIG, address) AND a real deduction breakdown computed via `@ph-dev-utils/payroll` (`netTakeHome` with SSS/PhilHealth/Pag-IBIG mandatories and optional BIR WT). Defaults: random salary via `faker.money.salary()`, WT included. Override with `{ salary, includeWT, nonTaxableAllowances }`.
+- **`faker.date.*`** — `holiday(opts?)`, `workingDay(opts?)`, `anyDay(opts?)`. Backed by `@ph-dev-utils/core` holiday data. `workingDay` excludes both weekends and any declared PH holiday.
+- **`faker.address.city(opts?)`** — random city/municipality from the PSA Q4 2024 PSGC dataset (1,634 entries). Filter by `{ region, province, isCity, isCapital }`.
+- **`faker.address.fullWithCity()`** — single-line address composed via PSGC: `street, city, province, region`. Province segment is omitted for HUC entries with no province (e.g., City of Manila).
+- New runtime dependencies: `@ph-dev-utils/core: ^0.2.0` (for cities + holidays) and `@ph-dev-utils/payroll: ^0.3.0` (for payslip math).
+- 13 new vitest + 13 new PHPUnit tests (totals: 34 + 35 = 69 green).
+
+### Notes
+
+- `faker.address.full()` (v0.1 shape — `street, province, region`) is unchanged. Use `fullWithCity()` for the v0.2 4-segment version.
+- All v0.2 generators flow through the same seeded PRNG, so determinism is preserved.
+
 ## [0.1.3] - 2026-05-19
 
 ### Added

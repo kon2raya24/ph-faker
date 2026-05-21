@@ -1,11 +1,13 @@
 {
   "name": "phdevutils/faker",
-  "description": "Filipino-localized fake-data generator (names, addresses, phones, government IDs, peso amounts, businesses).",
+  "description": "Filipino-localized fake-data generator — names, addresses (regions/provinces/cities), phones, government IDs, peso amounts, businesses, PH holiday/working-day dates, and full payslip fixtures (uses phdevutils/payroll).",
   "type": "library",
   "license": "MIT",
-  "keywords": ["philippines", "filipino", "faker", "fake-data", "test-fixtures", "mock"],
+  "keywords": ["philippines", "filipino", "faker", "fake-data", "test-fixtures", "mock", "payslip", "psgc", "holidays"],
   "require": {
-    "php": ">=8.2"
+    "php": ">=8.2",
+    "phdevutils/core": "^0.2.0",
+    "phdevutils/payroll": "^0.3.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^10.0"

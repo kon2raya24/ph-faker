@@ -7,7 +7,7 @@
 
 Filipino-localized fake-data generator for JS and PHP. Sibling of [ph-dev-utils](https://github.com/kon2raya24/ph-dev-utils) and [ph-payroll](https://github.com/kon2raya24/ph-payroll) (try the [live payroll demo](https://ph-payroll-demo.vercel.app)).
 
-Generates fake Filipino names, addresses, phone numbers, government IDs (format-valid only), peso amounts, and business names — all driven by a seeded deterministic PRNG so your test fixtures stay reproducible.
+Generates fake Filipino names, addresses (regions / provinces / PSGC cities), phone numbers, government IDs (format-valid only), peso amounts, business names, **PH holiday-aware dates**, and **complete payslip fixtures** with real BIR withholding tax math — all driven by a seeded deterministic PRNG so your test fixtures stay reproducible.
 
 ## Packages
 
@@ -44,6 +44,23 @@ faker.money.peso();              // 12345.67
 faker.money.salary();            // realistic PH salary range
 
 faker.business.name();           // 'Aling Nena Sari-Sari Store'
+
+// v0.2: cities + holiday-aware dates + payslip
+faker.address.city();                          // { code: '012805', name: 'City of Batac', ... }
+faker.address.city({ region: '13' });          // any NCR city
+faker.address.fullWithCity();                  // '4732 Mabini Street, City of Caloocan, Metro Manila, ...'
+
+faker.date.holiday();                          // any 2026 PH holiday
+faker.date.workingDay();                       // ISO date — not weekend, not holiday
+faker.date.workingDay({ year: 2025 });
+
+faker.payslip();
+// {
+//   employee: { fullName, tin, sss, philhealth, pagibig, address },
+//   period:   { type: 'monthly' },
+//   computation: { gross, totalDeductions, net, withholdingTax, netAfterTax, ... }
+// }
+faker.payslip({ salary: 30000 }).computation.netAfterTax;  // 26542.45 (ph-payroll worked example)
 ```
 
 ## PHP usage
