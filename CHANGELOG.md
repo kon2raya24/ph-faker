@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-05-28
+
+### Added
+
+- **Four new government-ID generators**, matching the `@ph-dev-utils/core` v0.4 validators so output is format-valid:
+  - `faker.id.nationalID()` — PhilSys National ID (16-digit PhilSys Card Number), `XXXX-XXXX-XXXX-XXXX`
+  - `faker.id.umid()` — UMID Common Reference Number (12 digits), `XXXX-XXXXXXX-X`
+  - `faker.id.passport()` — Philippine ePassport, `letter + 7 digits + letter` (e.g. `P1234567A`)
+  - `faker.id.prc()` — PRC professional license / registration number (7 digits)
+- PHP parity: `$faker->id->nationalID() / umid() / passport() / prc()`.
+
+### Notes
+
+- Same deterministic-RNG behavior as the existing ID generators. Generated IDs are **format-valid only** (no real registry behind them) — for test fixtures/seeders, never real-world use.
+
 ## [0.2.0] - 2026-05-21
 
 ### Added

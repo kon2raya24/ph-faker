@@ -44,4 +44,32 @@ describe('government ID generators produce format-valid values', () => {
       expect(id).toMatch(/^\d{4}-\d{4}-\d{4}$/);
     }
   });
+
+  it('National ID (PhilSys PCN) is 16 digits, formatted XXXX-XXXX-XXXX-XXXX', () => {
+    for (let i = 0; i < SAMPLES; i++) {
+      const id = f.id.nationalID();
+      expect(digits(id)).toHaveLength(16);
+      expect(id).toMatch(/^\d{4}-\d{4}-\d{4}-\d{4}$/);
+    }
+  });
+
+  it('UMID CRN is 12 digits, formatted XXXX-XXXXXXX-X', () => {
+    for (let i = 0; i < SAMPLES; i++) {
+      const id = f.id.umid();
+      expect(digits(id)).toHaveLength(12);
+      expect(id).toMatch(/^\d{4}-\d{7}-\d$/);
+    }
+  });
+
+  it('Passport is ePassport form: letter + 7 digits + letter', () => {
+    for (let i = 0; i < SAMPLES; i++) {
+      expect(f.id.passport()).toMatch(/^[A-Z]\d{7}[A-Z]$/);
+    }
+  });
+
+  it('PRC license is exactly 7 digits', () => {
+    for (let i = 0; i < SAMPLES; i++) {
+      expect(f.id.prc()).toMatch(/^\d{7}$/);
+    }
+  });
 });

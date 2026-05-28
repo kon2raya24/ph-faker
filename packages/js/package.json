@@ -1,6 +1,6 @@
 {
   "name": "@ph-dev-utils/faker",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filipino-localized fake-data generator — names, addresses (regions/provinces/cities), phones, government IDs, peso amounts, businesses, PH holiday/working-day dates, and full payslip fixtures (uses @ph-dev-utils/payroll).",
   "license": "MIT",
   "type": "module",

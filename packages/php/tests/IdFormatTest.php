@@ -63,4 +63,40 @@ final class IdFormatTest extends TestCase
             $this->assertMatchesRegularExpression('/^\d{4}-\d{4}-\d{4}$/', $id);
         }
     }
+
+    public function testNationalIdIs16DigitsAndFormatted(): void
+    {
+        $f = new Faker(123);
+        for ($i = 0; $i < self::SAMPLES; $i++) {
+            $id = $f->id->nationalID();
+            $this->assertSame(16, strlen($this->digits($id)));
+            $this->assertMatchesRegularExpression('/^\d{4}-\d{4}-\d{4}-\d{4}$/', $id);
+        }
+    }
+
+    public function testUmidIs12DigitsAndFormatted(): void
+    {
+        $f = new Faker(123);
+        for ($i = 0; $i < self::SAMPLES; $i++) {
+            $id = $f->id->umid();
+            $this->assertSame(12, strlen($this->digits($id)));
+            $this->assertMatchesRegularExpression('/^\d{4}-\d{7}-\d$/', $id);
+        }
+    }
+
+    public function testPassportIsEpassportForm(): void
+    {
+        $f = new Faker(123);
+        for ($i = 0; $i < self::SAMPLES; $i++) {
+            $this->assertMatchesRegularExpression('/^[A-Z]\d{7}[A-Z]$/', $f->id->passport());
+        }
+    }
+
+    public function testPrcIs7Digits(): void
+    {
+        $f = new Faker(123);
+        for ($i = 0; $i < self::SAMPLES; $i++) {
+            $this->assertMatchesRegularExpression('/^\d{7}$/', $f->id->prc());
+        }
+    }
 }

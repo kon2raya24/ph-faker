@@ -49,4 +49,40 @@ final class Id
         $c = $this->pad($this->rng->nextInt(0, 9999), 4);
         return "{$a}-{$b}-{$c}";
     }
+
+    private function letter(): string
+    {
+        return chr(65 + $this->rng->nextInt(0, 25));
+    }
+
+    // PhilSys National ID (PhilSys Card Number): 16 digits formatted XXXX-XXXX-XXXX-XXXX.
+    public function nationalID(): string
+    {
+        $g = [];
+        for ($i = 0; $i < 4; $i++) {
+            $g[] = $this->pad($this->rng->nextInt(0, 9999), 4);
+        }
+        return implode('-', $g);
+    }
+
+    // UMID Common Reference Number: 12 digits formatted XXXX-XXXXXXX-X.
+    public function umid(): string
+    {
+        $a = $this->pad($this->rng->nextInt(0, 9999), 4);
+        $b = $this->pad($this->rng->nextInt(0, 9999999), 7);
+        $c = $this->pad($this->rng->nextInt(0, 9), 1);
+        return "{$a}-{$b}-{$c}";
+    }
+
+    // Philippine ePassport: 1 letter + 7 digits + 1 letter, e.g. "P1234567A".
+    public function passport(): string
+    {
+        return $this->letter() . $this->pad($this->rng->nextInt(0, 9999999), 7) . $this->letter();
+    }
+
+    // PRC professional license / registration number: 7 digits.
+    public function prc(): string
+    {
+        return $this->pad($this->rng->nextInt(0, 9999999), 7);
+    }
 }

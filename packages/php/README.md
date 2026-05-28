@@ -204,6 +204,38 @@ Returns a 12-digit Pag-IBIG MID formatted `XXXX-XXXX-XXXX`.
 $f->id->pagibig();   // '1234-5678-9012'
 ```
 
+#### `$f->id->nationalID(): string`
+
+Returns a 16-digit PhilSys National ID (PhilSys Card Number) formatted `XXXX-XXXX-XXXX-XXXX`.
+
+```php
+$f->id->nationalID();   // '1234-5678-9012-3456'
+```
+
+#### `$f->id->umid(): string`
+
+Returns a 12-digit UMID Common Reference Number formatted `XXXX-XXXXXXX-X`.
+
+```php
+$f->id->umid();   // '1234-5678901-2'
+```
+
+#### `$f->id->passport(): string`
+
+Returns a Philippine ePassport number: a letter, 7 digits, then a letter.
+
+```php
+$f->id->passport();   // 'P1234567A'
+```
+
+#### `$f->id->prc(): string`
+
+Returns a 7-digit PRC professional license / registration number.
+
+```php
+$f->id->prc();   // '1234567'
+```
+
 ---
 
 ### `$f->money` — peso amounts

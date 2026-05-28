@@ -39,6 +39,10 @@ faker.id.tin();                  // '123-456-789-000'
 faker.id.sss();                  // '12-3456789-0'
 faker.id.philhealth();           // '12-345678901-2'
 faker.id.pagibig();              // '1234-5678-9012'
+faker.id.nationalID();           // '1234-5678-9012-3456' (PhilSys PCN)
+faker.id.umid();                 // '1234-5678901-2'
+faker.id.passport();             // 'P1234567A'
+faker.id.prc();                  // '1234567'
 
 faker.money.peso();              // 12345.67
 faker.money.salary();            // realistic PH salary range
