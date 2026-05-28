@@ -9,3 +9,4 @@ composer.lock
 .phpunit.cache/
 .vscode/
 .idea/
+.npmrc
